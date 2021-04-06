@@ -1,4 +1,4 @@
-# Webhook Action
+# Newrelic Insights Action
 
 Sends Lighthouse Performance Data to Newrelic Insights
 
