@@ -1,0 +1,19 @@
+
+name: 'Newrelic Insights Lighthouse Data'
+description: 'Sends Lighthouse data to Newrelic'
+inputs:
+  url:
+    description: 'The URL endpoint for your Newrelic Insights api'
+    required: true
+    default: ''
+  apikey:
+    description: 'The Newrelic Insights API key'
+    required: true
+    default: ''
+  data:
+    description: 'Raw Lighthouse report data'
+    required: true
+    default: null
+runs:
+  using: 'node12'
+  main: 'index.js'
