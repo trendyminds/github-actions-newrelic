@@ -3,7 +3,7 @@ module.exports = (results) => {
   const audits = results.lhr.audits;
 
   const responseJson = {
-    'eventType': 'Lighthouse',
+    'eventType': 'dev_Lighthouse',
     // 'device': device,
     'userAgent': results.lhr.userAgent,
     'requestedUrl': results.lhr.requestedUrl,
