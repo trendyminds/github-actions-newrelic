@@ -26,10 +26,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v1
 
-      - name: Webhook
+      - name: Lighthouse Check
         uses: trendyminds/github-actions-newrelic@master
         env:
-          url: https://my.webhook.url/path/to/my/action
-          method: POST
-          data: '{"favorite_color":"blue","message":"Hello!"}'
+          url: ${{ secrets.LIGHTHOUSE_CHECK_AWS_REGION }} # ex. https://insights-collector.newrelic.com/v1/accounts/0000000/events
+          apikey: ${{ secrets.LIGHTHOUSE_CHECK_AWS_REGION }}
+          data: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
 ```
