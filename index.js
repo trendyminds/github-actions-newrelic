@@ -1,7 +1,7 @@
 const core = require("@actions/core");
 const fetch = require("node-fetch");
 const createResponseData = require('./createResponseData');
-console.log(core.getInput("data"), 'test');
+
 const OPTS = {
   url: core.getInput("url") || "",
   apikey: core.getInput("apikey") || "",
@@ -9,6 +9,7 @@ const OPTS = {
 };
 
 (async () => {
+  console.log(OPTS.data, 'test');
   const res = await fetch(OPTS.url, {
     method: 'post',
     headers: { 'Content-Type': 'application/json', 'X-Insert-Key': OPTS.apikey },
