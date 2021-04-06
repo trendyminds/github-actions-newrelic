@@ -1,4 +1,4 @@
-# Webhook Action
+# Newrelic Insights Action
 
 Sends Lighthouse Performance Data to Newrelic Insights
 
@@ -13,23 +13,23 @@ Sends Lighthouse Performance Data to Newrelic Insights
 ## Example usage
 
 ```yml
-name: Create Sandbox
+name: Test PR
 
 on: pull_request
 
 jobs:
-  deploy:
-    name: Deploy
+  test-pr:
+    name: Test PR
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v1
 
-      - name: Webhook
+      - name: Lighthouse Check
         uses: trendyminds/github-actions-newrelic@master
         env:
-          url: https://my.webhook.url/path/to/my/action
-          method: POST
-          data: '{"favorite_color":"blue","message":"Hello!"}'
+          url: ${{ secrets.NEWRELIC_INSIGHTS_API_URL }} # ex. https://insights-collector.newrelic.com/v1/accounts/0000000/events
+          apikey: ${{ secrets.NEWRELIC_INSIGHTS_API_KEY }}
+          data: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
 ```
