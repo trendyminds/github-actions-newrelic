@@ -13,13 +13,13 @@ Sends Lighthouse Performance Data to Newrelic Insights
 ## Example usage
 
 ```yml
-name: Create Sandbox
+name: Test PR
 
 on: pull_request
 
 jobs:
-  deploy:
-    name: Deploy
+  test-pr:
+    name: Test PR
     runs-on: ubuntu-latest
 
     steps:
