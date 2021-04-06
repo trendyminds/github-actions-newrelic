@@ -1,7 +1,7 @@
 const core = require("@actions/core");
 const fetch = require("node-fetch");
 const createResponseData = require('./createResponseData');
-console.log(core.getInput("data"));
+console.log(core.getInput("data"), 'test');
 const OPTS = {
   url: core.getInput("url") || "",
   apikey: core.getInput("apikey") || "",
