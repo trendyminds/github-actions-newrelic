@@ -5,7 +5,7 @@ const createResponseData = require('./createResponseData');
 const OPTS = {
   url: core.getInput("url") || "",
   apikey: core.getInput("apikey") || "",
-  data: createResponseData(core.getInput("data")) || "{}"
+  data: core.getInput("data") || "{}"
 };
 
 (async () => {
