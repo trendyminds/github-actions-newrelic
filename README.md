@@ -28,7 +28,7 @@ jobs:
 
       - name: Lighthouse Check
         uses: trendyminds/github-actions-newrelic@master
-        env:
+        with:
           url: ${{ secrets.NEWRELIC_INSIGHTS_API_URL }} # ex. https://insights-collector.newrelic.com/v1/accounts/0000000/events
           apikey: ${{ secrets.NEWRELIC_INSIGHTS_API_KEY }}
           data: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
