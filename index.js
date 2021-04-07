@@ -12,8 +12,8 @@ const OPTS = {
 
 (async () => {
   const newrelicArray = [];
-  console.log(OPTS.data.data, 'test');
-  OPTS.data.data.map(result => {
+  console.log(OPTS.data, 'test');
+  OPTS.data.map(result => {
     newrelicArray.push(pick(result, 'rawData'));
   });
   console.log(newrelicArray);
