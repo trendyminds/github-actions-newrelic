@@ -15,7 +15,7 @@ const OPTS = {
   console.log(JSON.parse(OPTS.data), 'test');
   const parse = JSON.parse(OPTS.data).data;
   parse.map(result => {
-    newrelicArray.push(pick(result, 'rawData'));
+    newrelicArray.push(pick(result, 'rawData').rawData);
   });
   console.log(newrelicArray);
 
