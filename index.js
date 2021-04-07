@@ -15,10 +15,9 @@ const OPTS = {
 
   OPTS.data.data.map(result => {
     newrelicArray.push(pick(result, 'rawData'));
-  }
-
+  });
   console.log(newrelicArray);
-  )
+
   const res = await fetch(OPTS.url, {
     method: 'post',
     headers: { 'Content-Type': 'application/json', 'X-Insert-Key': OPTS.apikey },
