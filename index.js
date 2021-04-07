@@ -9,13 +9,20 @@ const OPTS = {
   data: core.getInput("data") || "{}"
 };
 
+
 (async () => {
-  console.log(OPTS.data, 'test');
-  console.log(pick(OPTS.data, ['data.rawData']), 'test222');
+  const newrelicArray = [];
+
+  OPTS.data.data.map(result => {
+    newrelicArray.push(pick(result, 'rawData'));
+  }
+
+  console.log(newrelicArray);
+  )
   const res = await fetch(OPTS.url, {
     method: 'post',
     headers: { 'Content-Type': 'application/json', 'X-Insert-Key': OPTS.apikey },
-    body: OPTS.data
+    body: newrelicArray
   });
 
   console.log(`Response: ${res.status} ${res.statusText}`);
