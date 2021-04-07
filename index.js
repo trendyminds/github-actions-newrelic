@@ -22,7 +22,7 @@ const OPTS = {
   const res = await fetch(OPTS.url, {
     method: 'post',
     headers: { 'Content-Type': 'application/json', 'X-Insert-Key': OPTS.apikey },
-    body: newrelicArray
+    body: JSON.stringify(newrelicArray)
   });
 
   console.log(`Response: ${res.status} ${res.statusText}`);
